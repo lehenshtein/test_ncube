@@ -1,0 +1,202 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+@font-face {
+	font-family: 'Helvetica';
+	src: url('../fonts/HelveticaRegular.eot');
+	src: url('../fonts/HelveticaRegular.eot') format('embedded-opentype'),
+		url('../fonts/HelveticaRegular.woff') format('woff'),
+		url('../fonts/HelveticaRegular.ttf') format('truetype');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Helvetica';
+	src: url('../fonts/HelveticaMedium.eot');
+	src: url('../fonts/HelveticaMedium.eot') format('embedded-opentype'),
+		url('../fonts/HelveticaMedium.woff') format('woff'),
+		url('../fonts/HelveticaMedium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+:root {
+    --contrast-col: #E35037;
+    --light-col: #fff;
+    --gray-col: #8E8E8E;
+}
+
+body {
+    font-family: 'Helvetica';
+    overflow: hidden;
+}
+a {
+    text-decoration: none;
+}
+
+
+.help-cont {
+     position: fixed;
+        bottom: 96px;
+    right: 100px;
+    display: inline-block;
+    height: 0;
+    width: 0;
+}
+.help-button {
+    height: 46px;
+    width: 46px;
+    background-color: var(--contrast-col);
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 0px 25px rgba(227, 80, 55, 0.8);
+    box-shadow: 0px 0px 25px rgba(227, 80, 55, 0.8);
+    transition: all .2s;
+    cursor: pointer;
+}
+.help-button .plus{
+    display: block;
+    text-align: center;
+    line-height: 45px;
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--light-col);
+}
+.help-button:hover {
+    -webkit-box-shadow: 0px 0px 35px rgba(227, 80, 55, 0.95);
+    box-shadow: 0px 0px 35px rgba(227, 80, 55, 0.95);
+}
+
+
+.card {
+    width: 300px;
+    height: 410px;
+    -webkit-box-shadow: inset hoff voff blur color;
+    box-shadow: 0px 3px 6px rgba(33, 33, 33, 0.35);
+    position: relative;
+    bottom: 500px;
+    right: 250px;
+    transition: all 0.8s;
+    transform: translateX(550px) rotate(30deg);
+    display: inline-block;
+}
+.card.active {
+    transform: none;
+
+}
+.card__top {
+    height: 255px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.card__top img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+}
+
+.card__date {
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--contrast-col);
+    width: 50px;
+    height: 50px;
+    color: var(--light-col);
+    right: 24px;
+    top: 20px;
+}
+.card__date p {
+    text-align: center;
+}
+.card__date p:nth-child(1) {
+    font-size: 16px;
+    padding-top: 10px;
+}
+.card__date p:nth-child(2) {
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.card__photos {
+    height: 28px;
+    width: 78px;
+    position: absolute;
+    font-size: 12px;
+    background-color: var(--contrast-col);
+    color: var(--light-col);
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 28px;
+    bottom: 0;
+    cursor: pointer;
+}
+
+.card__bot--wrapper {
+    padding: 20px 0 0 24px;
+}
+.card__title {
+    
+    font-size: 22px;
+    font-weight: 500;
+}
+.card__subtitle {
+ font-size: 18px;
+padding-top: 5px;
+    color: var(--contrast-col);
+}
+.card__icons {
+    position: absolute;
+    bottom: 25px;
+    font-size: 12px;
+}
+.card__icons a {
+    margin-right: 20px;
+    color: var(--gray-col);
+    transition: all .2s;
+}
+.card__icons a:hover {
+    color: var(--contrast-col);
+}
+
+
+
+.card-info {
+    background-color: #fff;
+    width: 300px;
+    height: 410px;
+    -webkit-box-shadow: inset hoff voff blur color;
+    box-shadow: 0px 3px 6px rgba(33, 33, 33, 0.35);
+    position: absolute;
+    padding: 60px 20px 20px;
+    line-height: 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    bottom: 60px;
+    right: -35px;
+    transition: all 0.8s;
+    transform: translateX(550px) rotate(30deg);
+    display: inline-block;
+}
+.card-info.active {
+    transform: none;
+
+}
+.card-info p {
+    padding-top: 20px;
+    color: var(--gray-col);
+}
+.close {
+    position: absolute;
+    top: 20px;
+    font-size: 22px;
+    color: var(--contrast-col);
+    cursor: pointer;
+    right: 20px;
+}
+.close:hover {
+    opacity: .8;
+}
