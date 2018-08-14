@@ -30,6 +30,7 @@
 body {
     font-family: 'Helvetica';
     overflow: hidden;
+    font-size: 16px;
 }
 a {
     text-decoration: none;
@@ -53,26 +54,37 @@ a {
     box-shadow: 0px 0px 25px rgba(227, 80, 55, 0.8);
     transition: all .2s;
     cursor: pointer;
+    animation: iconNormal 2.5s ease infinite;
+}
+@-webkit-keyframes iconNormal {
+  35% {
+    -webkit-box-shadow: 0px 0px 25px rgba(227, 80, 55, 0.8);
+    box-shadow: 0px 0px 25px rgba(227, 80, 55, 0.8);
+  }
+            70% {
+-webkit-box-shadow: 0px 0px 35px rgba(227, 80, 55, 0.95);
+    box-shadow: 0px 0px 35px 3px rgba(227, 80, 55, 0.95);
+  }
+                100% {
+    -webkit-box-shadow: 0px 0px 25px rgba(227, 80, 55, 0.8);
+    box-shadow: 0px 0px 25px rgba(227, 80, 55, 0.8);
+  }
 }
 .help-button .plus{
     display: block;
     text-align: center;
     line-height: 45px;
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: 500;
     color: var(--light-col);
-}
-.help-button:hover {
-    -webkit-box-shadow: 0px 0px 35px rgba(227, 80, 55, 0.95);
-    box-shadow: 0px 0px 35px rgba(227, 80, 55, 0.95);
 }
 
 
 .card {
     width: 300px;
     height: 410px;
-    -webkit-box-shadow: inset hoff voff blur color;
-    box-shadow: 0px 3px 6px rgba(33, 33, 33, 0.35);
+    -webkit-box-shadow: 0px 1px 3px rgba(33, 33, 33, 0.35);
+    box-shadow: 0px 1px 3px rgba(33, 33, 33, 0.35);
     position: relative;
     bottom: 500px;
     right: 250px;
@@ -80,23 +92,38 @@ a {
     transform: translateX(550px) rotate(30deg);
     display: inline-block;
 }
+
 .card.active {
     transform: none;
-
 }
+.card:hover {
+    transition: all 0.2s;
+    -webkit-box-shadow: 0px 3px 35px 1px rgba(33, 33, 33, 0.35);
+    box-shadow: 0px 3px 35px 1px rgba(33, 33, 33, 0.35);
+    transform: translateY(-5px);
+}
+
 .card__top {
     height: 255px;
     width: 100%;
     overflow: hidden;
     position: relative;
+    transition: all .2s;
+    background: #000;
+}
+.card:hover .card__top {
+    height: 165px;
 }
 .card__top img {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     height: 100%;
+    transition: all .2s;
 }
-
+.card:hover .card__top img {
+    opacity: .5;
+}
 .card__date {
     position: absolute;
     border-radius: 50%;
@@ -111,11 +138,11 @@ a {
     text-align: center;
 }
 .card__date p:nth-child(1) {
-    font-size: 16px;
+    font-size: 1rem;
     padding-top: 10px;
 }
 .card__date p:nth-child(2) {
-    font-size: 10px;
+    font-size: 0.625rem;
     text-transform: uppercase;
 }
 
@@ -123,7 +150,7 @@ a {
     height: 28px;
     width: 78px;
     position: absolute;
-    font-size: 12px;
+    font-size: 0.75rem;
     background-color: var(--contrast-col);
     color: var(--light-col);
     font-weight: 500;
@@ -133,24 +160,50 @@ a {
     bottom: 0;
     cursor: pointer;
 }
+.card__photos:hover {
+    opacity: .8;
+}
 
 .card__bot--wrapper {
-    padding: 20px 0 0 24px;
+    padding: 20px 24px 0 24px;
 }
 .card__title {
     
-    font-size: 22px;
+    font-size: 1.375rem;
     font-weight: 500;
 }
 .card__subtitle {
- font-size: 18px;
+ font-size: 1.125rem;
 padding-top: 5px;
     color: var(--contrast-col);
 }
+.card__text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: var(--gray-col);
+    padding-top: 10px;
+    overflow: hidden;
+    opacity: 0;
+    transition: all .2s;
+}
+.card:hover .card__text {
+    opacity: 1;
+}
+.read-more{
+        cursor: pointer;
+    color: var(--contrast-col);
+    float: right;
+}
+.read-more:hover {
+    opacity: .8;
+}
 .card__icons {
     position: absolute;
-    bottom: 25px;
-    font-size: 12px;
+    bottom: 0px;
+    font-size: 0.75rem;
+    width: calc(100% - 48px);
+    height: 40px;
+    background-color: #fff;
 }
 .card__icons a {
     margin-right: 20px;
@@ -167,16 +220,16 @@ padding-top: 5px;
     background-color: #fff;
     width: 300px;
     height: 410px;
-    -webkit-box-shadow: inset hoff voff blur color;
-    box-shadow: 0px 3px 6px rgba(33, 33, 33, 0.35);
+-webkit-box-shadow: 0px 3px 35px 1px rgba(33, 33, 33, 0.35);
+    box-shadow: 0px 3px 35px 1px rgba(33, 33, 33, 0.35);
     position: absolute;
     padding: 60px 20px 20px;
     line-height: 30px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    bottom: 60px;
-    right: -35px;
+    bottom: 54px;
+    right: -40px;
     transition: all 0.8s;
     transform: translateX(550px) rotate(30deg);
     display: inline-block;
@@ -192,7 +245,7 @@ padding-top: 5px;
 .close {
     position: absolute;
     top: 20px;
-    font-size: 22px;
+    font-size: 1.375rem;
     color: var(--contrast-col);
     cursor: pointer;
     right: 20px;
